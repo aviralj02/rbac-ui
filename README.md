@@ -19,11 +19,5 @@ access cascade rules
 ## todos
 
 - Add TypeScript types for nested roles (hierarchy tree).
-- Add a can() alias for hasAccess() for ergonomic use.
-- Implement AccessGate component:
-
-```typescript
-<AccessGate resource="ui:dashboard:checklist">
-  <ChecklistComponent />
-</AccessGate>
-```
+- Add a can() alias for for ergonomic use.
+- withAccess(Component, resourcehasAccess() ) HOC

@@ -1,6 +1,6 @@
 "use client";
 
-import { useAccess } from "@rbac/react";
+import { AccessGate, useAccess } from "@rbac/react";
 
 type Props = {};
 
@@ -10,10 +10,10 @@ const DashboardClient = (props: Props) => {
   return (
     <div>
       <h2>Dashboard</h2>
-      <p>
-        Checklist access: {hasAccess("ui:dashboard:checklist") ? "✅" : "❌"}
-      </p>
-      <p>Reports access: {hasAccess("ui:dashboard:reports") ? "✅" : "❌"}</p>
+      <p>View1 access: {hasAccess("ui:dashboard:view1") ? "✅" : "❌"}</p>
+      <p>View2 access: {hasAccess("ui:dashboard:view2") ? "✅" : "❌"}</p>
+
+      <AccessGate resource={"ui:dashboard:special"}>Special Access</AccessGate>
     </div>
   );
 };
