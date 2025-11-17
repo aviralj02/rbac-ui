@@ -8,8 +8,6 @@ a framework for modern role management
 
 ! → deny override
 
-`*` → wildcard
-
 prefix keyword (ui, pages, feature, etc.)
 
 tree-based inheritance rules
