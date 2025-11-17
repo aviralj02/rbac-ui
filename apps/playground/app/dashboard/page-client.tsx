@@ -1,5 +1,6 @@
 "use client";
 
+import ProtectedComp from "@/components/ProtectedComp";
 import { AccessGate, useAccess } from "@rbac/react";
 
 type Props = {};
@@ -13,7 +14,14 @@ const DashboardClient = (props: Props) => {
       <p>View1 access: {hasAccess("ui:dashboard:view1") ? "✅" : "❌"}</p>
       <p>View2 access: {hasAccess("ui:dashboard:view2") ? "✅" : "❌"}</p>
 
-      <AccessGate resource={"ui:dashboard:special"}>Special Access</AccessGate>
+      <AccessGate
+        resource={"ui:dashboard:special"}
+        fallback={<span>no access</span>}
+      >
+        Special Access
+      </AccessGate>
+
+      <ProtectedComp />
     </div>
   );
 };

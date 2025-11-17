@@ -12,8 +12,7 @@ const AccessProviderClient = ({ children }: Props) => {
         "!ui:dashboard:view2",
         "ui:dashboard",
         "ui:dashboard:special",
-        "api:fetchdocs:allow",
-        "api:fetchdocs:deny",
+        "ui:dashboard:hoc",
       ]}
     >
       {children}

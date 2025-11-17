@@ -18,6 +18,4 @@ access cascade rules
 
 ## todos
 
-- Add TypeScript types for nested roles (hierarchy tree).
-- Add a can() alias for for ergonomic use.
-- withAccess(Component, resourcehasAccess() ) HOC
+- a protected api wrapper
