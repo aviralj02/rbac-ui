@@ -1,6 +1,6 @@
 "use client";
 
-import { useAccessList, useHasAccess, withAccess } from "@rbac/react";
+import { useAccessList, useGuard, useHasAccess, withAccess } from "@rbac/react";
 
 const PostPageClient = () => {
   const canFullyAdmin = useHasAccess(
@@ -17,6 +17,18 @@ const PostPageClient = () => {
     "ui:dashboard:post:edit",
     "ui:dashboard:post:delete",
   ]);
+
+  const guard = useGuard();
+
+  const terminateAccount = () => alert("Account Terminated");
+
+  const safelyTerminateAccount = guard(
+    "ui:dashboard:post:terminate",
+    terminateAccount,
+    {
+      onDeny: () => alert("Cannot Terminate Account ❌"),
+    }
+  );
 
   return (
     <main className="w-full h-screen flex flex-col mx-auto max-w-3xl">
@@ -44,7 +56,12 @@ const PostPageClient = () => {
 
       <div className="my-4 flex justify-center">
         {canFullyAdmin && (
-          <button className="btn bg-amber-600!">Delete Account</button>
+          <button
+            className="btn bg-amber-600!"
+            onClick={safelyTerminateAccount}
+          >
+            Terminate Account
+          </button>
         )}
       </div>
     </main>

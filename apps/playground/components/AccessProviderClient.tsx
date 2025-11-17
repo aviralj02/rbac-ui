@@ -17,6 +17,7 @@ const AccessProviderClient = ({ children }: Props) => {
         "ui:dashboard:post:create",
         "ui:dashboard:post:edit",
         "ui:dashboard:post:delete",
+        "!ui:dashboard:post:terminate",
       ]}
     >
       {children}
