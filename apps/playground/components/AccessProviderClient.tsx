@@ -8,6 +8,7 @@ const AccessProviderClient = ({ children }: Props) => {
   return (
     <AccessProvider
       roles={[
+        // "*",
         "ui:dashboard:view1",
         "!ui:dashboard:view2",
         "ui:dashboard",

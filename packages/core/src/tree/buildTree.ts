@@ -1,6 +1,6 @@
 import { PermissionNode } from "../types";
 
-export function buildTree(roles: string[]): PermissionNode {
+export function buildTree(roles: Array<string>): PermissionNode {
   const root: PermissionNode = {
     allow: false,
     deny: false,
@@ -10,6 +10,15 @@ export function buildTree(roles: string[]): PermissionNode {
   for (const role of roles) {
     const isNeg = role.startsWith("!");
     const clean = isNeg ? role.slice(1) : role;
+
+    if (clean === "*") {
+      if (isNeg) {
+        root.deny = true;
+      } else {
+        root.allow = true;
+      }
+      continue;
+    }
 
     const parts = clean.split(":");
     let node = root;

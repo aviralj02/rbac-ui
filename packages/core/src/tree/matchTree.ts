@@ -3,7 +3,10 @@ import { PermissionNode } from "../types";
 export function matchTree(root: PermissionNode, resource: string): boolean {
   const parts = resource.split(":");
   let node: PermissionNode | undefined = root;
-  let allowed = false;
+
+  if (root.deny) return false;
+
+  let allowed = root.allow;
 
   for (const part of parts) {
     if (!node) break;
