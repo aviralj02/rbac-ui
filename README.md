@@ -30,7 +30,9 @@ Built for frontend teams who want **predictable**, **explicit**, and **flexible*
 - No repeated looping over role strings
 - Ultra-fast access checks (`O(depth)`)
 
-### 🔹 React Integration
+---
+
+## 💠 React Integration
 
 - `<AccessProvider />` — context + RBAC instance
 - `useAccess()` — low-level RBAC hook
@@ -40,14 +42,12 @@ Built for frontend teams who want **predictable**, **explicit**, and **flexible*
 - `<AccessGate />` — conditional UI
 - `withAccess()` — HOC for component-level access
 
----
-
 # 📦 Installation
 
 ```bash
-npm install @rbac/react
+npm install @rbac-ui/react
 # or
-yarn add @rbac/react
+yarn add @rbac-ui/react
 # or
-pnpm add @rbac/react
+pnpm add @rbac-ui/react
 ```
