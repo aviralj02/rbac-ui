@@ -1,6 +1,6 @@
 "use client";
 
-import { AccessProvider } from "@rbac/react";
+import { AccessProvider } from "@rbac-ui/react";
 
 type Props = { children: React.ReactNode };
 

@@ -1,7 +1,7 @@
 "use client";
 
 import ProtectedComp from "@/components/ProtectedComp";
-import { AccessGate, useAccess } from "@rbac/react";
+import { AccessGate, useAccess } from "@rbac-ui/react";
 
 type Props = {};
 

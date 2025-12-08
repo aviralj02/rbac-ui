@@ -1,4 +1,4 @@
-import { withAccess } from "@rbac/react";
+import { withAccess } from "@rbac-ui/react";
 
 const ProtectedComp = () => {
   return <div>HOC Protected Component</div>;
