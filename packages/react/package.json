@@ -1,6 +1,6 @@
 {
   "name": "@rbac-ui/react",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -9,14 +9,12 @@
     "build": "npm run clean && rollup -c",
     "dev": "rollup -c -w"
   },
-  "dependencies": {
-    "@rbac/core": "*"
-  },
   "peerDependencies": {
     "react": "^18.0.0 || ^19.0.0",
     "react-dom": "^18.0.0 || ^19.0.0"
   },
   "devDependencies": {
+    "@rbac-ui/core": "*",
     "@rollup/plugin-commonjs": "^29.0.0",
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@rollup/plugin-typescript": "^12.3.0",

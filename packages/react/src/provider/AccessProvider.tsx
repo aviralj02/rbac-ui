@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useMemo } from "react";
-import { RBAC } from "@rbac/core";
+import { RBAC } from "@rbac-ui/core";
 import { AccessContext } from "../context/AccessContext";
 
 interface AccessProviderProps {
