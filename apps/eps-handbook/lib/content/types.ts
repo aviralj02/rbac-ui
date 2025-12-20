@@ -1,0 +1,31 @@
+export type DocSection = {
+  title: string;
+  blocks: DocBlock[];
+};
+
+export type DocBlock =
+  | {
+      kind: "bullets";
+      items: string[];
+    }
+  | {
+      kind: "paragraphs";
+      items: string[];
+    }
+  | {
+      kind: "code";
+      code: string;
+      title?: string;
+    };
+
+export function bullets(...items: string[]): DocBlock {
+  return { kind: "bullets", items };
+}
+
+export function paragraphs(...items: string[]): DocBlock {
+  return { kind: "paragraphs", items };
+}
+
+export function codeBlock(code: string, title?: string): DocBlock {
+  return { kind: "code", code, title };
+}

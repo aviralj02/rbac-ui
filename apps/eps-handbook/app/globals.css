@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+
+*, :after, :before {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --ff-sans: "X", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --gray1: #fcfcfc;
+  --gray3: #f3f3f3;
+  --gray4: #ededed;
+  --gray11: #6f6f6f;
+  --gray12: #171717;
+  --grayA2: rgba(0, 0, 0, .027);
+  --focus-color: #1e90ff;
+  --focus-shadow: 0 0 0 2px var(--gray1), 0 0 0 4px var(--focus-color);
+}
+
+@theme inline {
+  --color-background: var(--gray1);
+  --color-foreground: var(--gray12);
+  --color-border: var(--gray4);
+  --color-muted: var(--gray3);
+  --color-muted-foreground: var(--gray11);
+  --font-sans: var(--ff-sans);
+}
+
+body {
+  padding: 0;
+  background: var(--gray1);
+  font-family: var(--ff-sans);
+  margin: 0;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+*:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-shadow);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+.one-pager {
+  --sh-identifier: #0f172a; /* zinc-ish */
+  --sh-class: #0f172a;
+  --sh-jsxliterals: #0f172a;
+
+  --sh-sign: #64748b; /* slate */
+  --sh-comment: #6b7280; /* muted */
+
+  --sh-keyword: #b91c1c; /* red */
+  --sh-string: #0f766e; /* teal */
+  --sh-property: #1d4ed8; /* blue */
+  --sh-entity: #7c3aed; /* violet */
+}
+
+.one-pager .sh__token--class {
+  color: var(--sh-class);
+}
+.one-pager .sh__token--identifier {
+  color: var(--sh-identifier);
+}
+.one-pager .sh__token--sign {
+  color: var(--sh-sign);
+}
+.one-pager .sh__token--property {
+  color: var(--sh-property);
+}
+.one-pager .sh__token--entity {
+  color: var(--sh-entity);
+}
+.one-pager .sh__token--jsxliterals {
+  color: var(--sh-jsxliterals);
+}
+.one-pager .sh__token--string {
+  color: var(--sh-string);
+}
+.one-pager .sh__token--keyword {
+  color: var(--sh-keyword);
+}
+.one-pager .sh__token--comment {
+  color: var(--sh-comment);
+}
+
+
