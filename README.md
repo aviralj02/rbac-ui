@@ -1,8 +1,8 @@
-# 🛡️ RBAC Framework
+# 🛡️ rbac-ui
 
 ### Resource-Based Access Control for Modern Frontend Apps
 
-A lightweight, tree-based, zero-dependency RBAC framework for React applications — with:
+A lightweight, tree-based, zero-dependency RBAC framework for frontend applications — with:
 
 - **Fast tree-based permission evaluation**
 - **Intuitive permission grammar** (`ui:dashboard:checklist`)
@@ -30,7 +30,9 @@ Built for frontend teams who want **predictable**, **explicit**, and **flexible*
 - No repeated looping over role strings
 - Ultra-fast access checks (`O(depth)`)
 
-### 🔹 React Integration
+---
+
+## 💠 React Integration
 
 - `<AccessProvider />` — context + RBAC instance
 - `useAccess()` — low-level RBAC hook
@@ -40,14 +42,31 @@ Built for frontend teams who want **predictable**, **explicit**, and **flexible*
 - `<AccessGate />` — conditional UI
 - `withAccess()` — HOC for component-level access
 
----
-
-# 📦 Installation
+## 📦 Installation
 
 ```bash
-npm install @rbac/react
+npm install @rbac-ui/react
 # or
-yarn add @rbac/react
+yarn add @rbac-ui/react
 # or
-pnpm add @rbac/react
+pnpm add @rbac-ui/react
 ```
+
+---
+
+## ⚒️ Best Practices
+
+Always validate permissions on the backend too.
+
+Use enums/constants in your frontend:
+
+```typescript
+export const PERMS = {
+  DASHBOARD: "ui:dashboard",
+  CHECKLIST: "ui:dashboard:checklist",
+};
+```
+
+Store roles however you want (DB, JWT, API).
+
+The framework only needs a `Array<string>`.

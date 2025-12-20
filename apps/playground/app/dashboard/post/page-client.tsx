@@ -1,6 +1,11 @@
 "use client";
 
-import { useAccessList, useGuard, useHasAccess, withAccess } from "@rbac/react";
+import {
+  useAccessList,
+  useGuard,
+  useHasAccess,
+  withAccess,
+} from "@rbac-ui/react";
 
 const PostPageClient = () => {
   const canFullyAdmin = useHasAccess(

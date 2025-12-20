@@ -1,18 +1,28 @@
 {
-  "name": "@rbac/react",
-  "version": "0.0.1",
+  "name": "@rbac-ui/react",
+  "version": "0.0.3",
   "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "private": true,
   "scripts": {
-    "build": "tsc -b",
-    "dev": "tsc -w"
-  },
-  "dependencies": {
-    "@rbac/core": "*"
+    "clean": "rm -rf dist",
+    "build": "npm run clean && rollup -c",
+    "dev": "rollup -c -w"
   },
   "peerDependencies": {
     "react": "^18.0.0 || ^19.0.0",
     "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@rbac-ui/core": "*",
+    "@rollup/plugin-commonjs": "^29.0.0",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-typescript": "^12.3.0",
+    "rollup": "^4.53.3",
+    "rollup-plugin-dts": "^6.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aviralj02/rbac-ui.git"
   }
 }
