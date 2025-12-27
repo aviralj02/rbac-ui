@@ -1,5 +1,6 @@
 export type DocSection = {
   title: string;
+  level?: 1 | 2; // 1 for main heading (h2), 2 for subheading (h3)
   blocks: DocBlock[];
 };
 

@@ -75,11 +75,17 @@ export function OnePagerRenderer({ sections }: { sections: DocSection[] }) {
     <>
       {sections.map((section) => {
         const id = getSectionId(section.title);
+        const level = section.level ?? 1;
+        const HeadingTag = level === 1 ? "h2" : "h3";
+        const headingClass =
+          level === 1
+            ? "text-base font-semibold mb-2 text-foreground scroll-mt-8"
+            : "text-sm font-medium mb-1.5 mt-4 text-foreground/90 scroll-mt-8";
         return (
-          <section key={id} className="mb-6 md:mb-8">
-            <h2
+          <section key={id} className={level === 1 ? "mb-6 md:mb-8" : "mb-4"}>
+            <HeadingTag
               id={id}
-              className="text-sm font-normal mb-2 text-foreground scroll-mt-8"
+              className={headingClass}
             >
               <a
                 href={`#${id}`}
@@ -89,11 +95,11 @@ export function OnePagerRenderer({ sections }: { sections: DocSection[] }) {
                 <span className="absolute -left-4 top-0 text-muted-foreground opacity-0 group-hover:opacity-100">
                   #
                 </span>
-                <span className="underline-offset-4 decoration-black/20 hover:underline font-medium">
+                <span className="underline-offset-4 hover:underline">
                   {section.title}
                 </span>
               </a>
-            </h2>
+            </HeadingTag>
             <div className="space-y-3">
               {section.blocks.map((block, blockIdx) => {
                 if (block.kind === "bullets") {
